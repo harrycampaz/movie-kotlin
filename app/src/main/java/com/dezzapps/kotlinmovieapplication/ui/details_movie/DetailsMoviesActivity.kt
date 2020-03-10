@@ -1,8 +1,6 @@
-package com.dezzapps.kotlinmovieapplication
+package com.dezzapps.kotlinmovieapplication.ui.details_movie
 
-import android.os.Build
 import android.os.Bundle
-import android.os.StrictMode
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -10,8 +8,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import com.dezzapps.kotlinmovieapplication.R
 import com.dezzapps.kotlinmovieapplication.constants.Constants.Companion.POSTER_BASE_URL
-import com.dezzapps.kotlinmovieapplication.data.MovieRepository
+import com.dezzapps.kotlinmovieapplication.data.repository.MovieRepository
 import com.dezzapps.kotlinmovieapplication.data.NetworkState
 import com.dezzapps.kotlinmovieapplication.data.api.TheMovieDBClient
 import com.dezzapps.kotlinmovieapplication.data.api.TheMovieDBInterface
@@ -31,16 +30,15 @@ class DetailsMoviesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_movies)
 
-        if (Build.VERSION.SDK_INT > 9) {
-            val policy =
-                StrictMode.ThreadPolicy.Builder().permitAll().build()
-            StrictMode.setThreadPolicy(policy)
-        }
+
 
         var movieId: Int = intent.getIntExtra("id", 475303)
 
         val apiService: TheMovieDBInterface = TheMovieDBClient.getClient()
-        movieRepository = MovieRepository(apiService)
+        movieRepository =
+            MovieRepository(
+                apiService
+            )
 
         viewModel = getViewModel(movieId)
 

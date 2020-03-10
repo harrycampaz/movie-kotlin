@@ -1,6 +1,7 @@
-package com.dezzapps.kotlinmovieapplication.data
+package com.dezzapps.kotlinmovieapplication.data.repository
 
 import androidx.lifecycle.LiveData
+import com.dezzapps.kotlinmovieapplication.data.NetworkState
 import com.dezzapps.kotlinmovieapplication.data.api.TheMovieDBInterface
 import com.dezzapps.kotlinmovieapplication.data.network.MovieDetailsNetworkDataSource
 import com.dezzapps.kotlinmovieapplication.models.MoviesDetails

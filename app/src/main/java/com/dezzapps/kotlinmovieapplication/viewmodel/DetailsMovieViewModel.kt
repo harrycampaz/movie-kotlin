@@ -2,7 +2,7 @@ package com.dezzapps.kotlinmovieapplication.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.dezzapps.kotlinmovieapplication.data.MovieRepository
+import com.dezzapps.kotlinmovieapplication.data.repository.MovieRepository
 import com.dezzapps.kotlinmovieapplication.data.NetworkState
 import com.dezzapps.kotlinmovieapplication.models.MoviesDetails
 import io.reactivex.disposables.CompositeDisposable
