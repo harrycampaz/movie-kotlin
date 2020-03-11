@@ -60,7 +60,7 @@ class MovieDataSource(private val apiService : TheMovieDBInterface, private val 
                 },{
 
                     networkState.postValue(NetworkState.ERROR)
-                    Log.e("MoviedataDource", it.message)
+                    Log.e("MovieDataSource", it.message)
 
                 })
         )
