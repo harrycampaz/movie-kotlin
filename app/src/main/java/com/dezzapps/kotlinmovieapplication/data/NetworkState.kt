@@ -16,10 +16,10 @@ class NetworkState (val status: Status, val msg: String) {
         val ENDOFLIST: NetworkState
 
         init {
-            LOADED = NetworkState(Status.SUCCESS, "Success")
-            LOADING = NetworkState(Status.RUNNING, "Running")
-            ERROR = NetworkState(Status.FAILED, "Something went wrong")
-            ENDOFLIST = NetworkState(Status.FAILED, "You have reached the end" )
+            LOADED = NetworkState(Status.SUCCESS, "Success (Exitoso)")
+            LOADING = NetworkState(Status.RUNNING, "Running (Corriendo)")
+            ERROR = NetworkState(Status.FAILED, "Something went wrong (Algo paso)")
+            ENDOFLIST = NetworkState(Status.FAILED, "You have reached the end (La busqueda termino)" )
 
         }
     }
